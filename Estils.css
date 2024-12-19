@@ -8,14 +8,20 @@ body {
 
 header {
     display: flex;
+<<<<<<< HEAD
     position: fixed;
+=======
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
     justify-content: space-between;
     align-items: center;
     background-color: #f5ebe0;
     padding: 10px 20px;
+<<<<<<< HEAD
     top: 0;
     left: 0;
     right: 0;
+=======
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 #politica_priv {
@@ -28,7 +34,11 @@ header {
 }
 
 .logo img {
+<<<<<<< HEAD
     max-height: 70px;
+=======
+    max-height: 60px;
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 header h1 {
@@ -59,8 +69,12 @@ header h1 {
 }
 
 /* Imatge de fons */
+<<<<<<< HEAD
 .Imatge-fons {
     margin-top: 4%;
+=======
+.background-image {
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
     background: url('Galeria/Fotos/Fondo_pag.png') center/cover no-repeat;
     height: 100vh;
     display: flex;
@@ -118,6 +132,7 @@ footer a:hover {
 }
 
 /* Disseny de la galeria */
+<<<<<<< HEAD
 
 .galeria-container {
     display: grid;
@@ -188,33 +203,84 @@ footer a:hover {
 
 #btnTornaInici:hover {
     background-color: #5a4d41;
+=======
+#galeria {
+    padding: 20px;
+}
+
+.galeria-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.galeria-item img,
+.galeria-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item:hover img,
+.galeria-item:hover video {
+    transform: scale(1.05);
+}
+
+#galeria h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: bold;
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 /* Secció Serveis */
 #serveis {
+<<<<<<< HEAD
     margin-top: 4%;
     padding: 40px 20px;
     text-align: center;
 
+=======
+    padding: 40px 20px;
+    text-align: center;
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 #serveis h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
     font-weight: bold;
+<<<<<<< HEAD
     color: #5e4d3d;
     text-transform: uppercase;
     letter-spacing: 2px;
+=======
+    color: #333;
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 #serveis p {
     font-size: 1.2em;
     margin-bottom: 40px;
+<<<<<<< HEAD
     color: #8b7d6b;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
+=======
+    color: #666;
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 .serveis-container {
@@ -226,43 +292,69 @@ footer a:hover {
 }
 
 .servei-item {
+<<<<<<< HEAD
     background-color: #f1e3d3;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+=======
+    background-color: #f5ebe0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 .servei-item:hover {
     transform: translateY(-10px);
+<<<<<<< HEAD
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+=======
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 .servei-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+<<<<<<< HEAD
 
+=======
+    border-bottom: 2px solid #eee;
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 .servei-item h3 {
     font-size: 1.8em;
+<<<<<<< HEAD
     color: #5e4d3d;
     margin-top: 15px;
     text-transform: capitalize;
     letter-spacing: 1px;
+=======
+    color: #333;
+    margin-top: 20px;
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 .servei-item p {
     font-size: 1.1em;
+<<<<<<< HEAD
     color: #6d5d4b;
     padding: 0 20px 20px;
     line-height: 1.5;
+=======
+    color: #666;
+    padding: 0 20px 20px;
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 /* Secció Sobre mi */
 
 #biografia {
+<<<<<<< HEAD
     margin-top: 4%;
     display: flex;
     align-items: center;
@@ -295,12 +387,41 @@ footer a:hover {
     max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+=======
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+#biografia .foto {
+    flex: 1;
+    max-width: 300px;
+    margin-right: 20px;
+}
+
+#biografia .foto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#biografia .text {
+    flex: 2;
+    max-width: 600px;
+    color: #4a4a4a;
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 
 /* Secció Politica Privacitat i cookies */
 .politica h1 {
+<<<<<<< HEAD
     margin-top: 10%;
+=======
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
     color: #5e4d3d;
     font-size: 2.5rem;
     text-align: center;
@@ -360,6 +481,7 @@ footer a:hover {
 
 /* Estils generals per a la secció de contacte */
 #contacte {
+<<<<<<< HEAD
     margin: 4% auto;
     /* 4% marge superior i inferior, auto centrat horitzontalment */
     padding: 30px;
@@ -369,6 +491,12 @@ footer a:hover {
     width: 100%;
 
 
+=======
+    padding: 30px;
+    background-color: #f7f7f7;
+    max-width: 800px;
+    margin: 0 auto;
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 }
 
 /* Estils per al títol del formulari */
@@ -390,7 +518,10 @@ footer a:hover {
 /* Estils per als fieldsets */
 form fieldset {
     border: 1px solid #ccc;
+<<<<<<< HEAD
     border-color: #8B4513;
+=======
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
     border-radius: 6px;
     padding: 15px;
     margin-bottom: 20px;
@@ -456,6 +587,7 @@ button[type="submit"] {
     height: 40px;
 }
 
+<<<<<<< HEAD
 /* Estils per a l'avís de cookies */
 .avis-cookies {
     position: fixed;
@@ -492,6 +624,8 @@ button[type="submit"] {
     background-color: #e0c17b;
 }
 
+=======
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
 /* MEDIA QUERIES */
 @media screen and (max-width: 768px) {
     header {

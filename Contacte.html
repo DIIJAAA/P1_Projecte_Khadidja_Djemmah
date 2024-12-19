@@ -16,11 +16,19 @@
     <!-- Capçalera -->
     <header class="capçalera">
         <div class="logo">
+<<<<<<< HEAD
             <img src="Galeria/Logo.png" alt="Portfoli Fotogràfic">
         </div>
         <nav class="navegacio">
             <ul>
                 <li><a href="Index.html">Inici</a></li>
+=======
+            <img src="Galeria/Logo.png" alt="Portfoli Fotogràfic" />
+        </div>
+        <nav class="navegacio">
+            <ul>
+                <li><a href="Pàgina_Inicial.html">Inici</a></li>
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
                 <li><a href="Galeria.html">Galeria</a></li>
                 <li><a href="Serveis.html">Serveis</a></li>
                 <li><a href="Contacte.html" class="actiu">Contacte</a></li>
@@ -30,6 +38,7 @@
     </header>
 
     <!-- Secció de Contacte -->
+<<<<<<< HEAD
     <main style="background: url('Galeria/Fotos/Fondo_pag.png') center/cover no-repeat;">
         <section id="contacte">
             <h2>CONTACTE</h2>
@@ -104,6 +113,80 @@
 
     <footer>
         <p>&copy; 2024 [Dija's View] Tots els drets reservats.</p>
+=======
+    <section id="contacte">
+        <h2>CONTACTE</h2>
+        <p>Omple el formulari per posar-te en contacte amb mi. Estaré encantada de parlar amb tu!</p>
+
+        <form action="formulari.php" method="post">
+            <!-- Informació personal -->
+            <fieldset>
+                <legend>Informació personal</legend>
+
+                <div class="form-group">
+                    <label for="nom">Nom:</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correu electrònic:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tel">Telèfon de contacte:</label>
+                    <input type="tel" id="tel" name="tel">
+                </div>
+            </fieldset>
+
+            <!-- Serveis d'interès -->
+            <fieldset>
+                <legend>Serveis d'interès</legend>
+
+                <div class="form-group">
+                    <label for="serveis">Serveis:</label>
+                    <select id="serveis" name="serveis" multiple required>
+                        <option value="retrats">Retrats Personalitzats</option>
+                        <option value="esdeveniments">Fotografia d'Esdeveniments</option>
+                        <option value="lliure">Fotografia Lliure</option>
+                        <option value="productes">Fotografia de Productes</option>
+                        <option value="paisatge">Fotografia de Paisatges</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="data">Data desitjada:</label>
+                    <input type="date" id="data" name="data">
+                </div>
+            </fieldset>
+
+            <!-- Missatge -->
+            <fieldset>
+                <legend>Missatge</legend>
+
+                <div class="form-group">
+                    <label for="missatge">Missatge:</label>
+                    <textarea id="missatge" name="missatge" required></textarea>
+                </div>
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <p>Pots trobar-me a les següents xarxes socials:</p>
+        <div class="socials">
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="Galeria/Xarxes_socials/Instagram_logo_2022.svg.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="Galeria/Xarxes_socials/2021_Facebook_icon.svg.png" alt="Facebook"></a>
+            <a href="https://x.com" target="_blank">
+                <img src="Galeria/Xarxes_socials/x.png" alt="X"></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Khadidja D. Tots els drets reservats.</p>
+>>>>>>> 7fc0a04421bb6c8f26c2aec2b605ceff07fcd069
         <nav>
             <a href="Politica_privacitat.html">Política de privacitat</a><br>
             <a href="Politica_cookies.html">Política de Cookies</a>
