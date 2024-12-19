@@ -157,6 +157,18 @@ footer a:hover {
     text-align: center;
 }
 
+#videos p,
+#fotos p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #8b7d6b;
+    text-align: center;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
 /* Botó per tornar a l'inici */
 #btnTornaInici {
     position: fixed;
