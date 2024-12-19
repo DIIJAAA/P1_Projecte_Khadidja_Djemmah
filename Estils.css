@@ -8,10 +8,14 @@ body {
 
 header {
     display: flex;
+    position: fixed;
     justify-content: space-between;
     align-items: center;
     background-color: #f5ebe0;
     padding: 10px 20px;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 #politica_priv {
@@ -24,7 +28,7 @@ header {
 }
 
 .logo img {
-    max-height: 60px;
+    max-height: 70px;
 }
 
 header h1 {
@@ -55,7 +59,8 @@ header h1 {
 }
 
 /* Imatge de fons */
-.background-image {
+.Imatge-fons {
+    margin-top: 4%;
     background: url('Galeria/Fotos/Fondo_pag.png') center/cover no-repeat;
     height: 100vh;
     display: flex;
@@ -113,61 +118,91 @@ footer a:hover {
 }
 
 /* Disseny de la galeria */
-#galeria {
-    padding: 20px;
-}
 
 .galeria-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
 }
 
-.galeria-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-}
-
-.galeria-item img,
-.galeria-item video {
+.galeria-container img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
     transition: transform 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.galeria-item:hover img,
-.galeria-item:hover video {
+.galeria-container video {
+
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.galeria-container img:hover {
     transform: scale(1.05);
 }
 
-#galeria h2 {
-    text-align: center;
-    margin-bottom: 30px;
+#videos h2,
+#fotos h2 {
     font-size: 2em;
     font-weight: bold;
+    color: #5e4d3d;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Botó per tornar a l'inici */
+#btnTornaInici {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8c705c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+#btnTornaInici:hover {
+    background-color: #5a4d41;
 }
 
 /* Secció Serveis */
 #serveis {
+    margin-top: 4%;
     padding: 40px 20px;
     text-align: center;
+
 }
 
 #serveis h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
     font-weight: bold;
-    color: #333;
+    color: #5e4d3d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 #serveis p {
     font-size: 1.2em;
     margin-bottom: 40px;
-    color: #666;
+    color: #8b7d6b;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
 .serveis-container {
@@ -179,68 +214,81 @@ footer a:hover {
 }
 
 .servei-item {
-    background-color: #f5ebe0;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #f1e3d3;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .servei-item:hover {
     transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .servei-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-bottom: 2px solid #eee;
+
 }
 
 .servei-item h3 {
     font-size: 1.8em;
-    color: #333;
-    margin-top: 20px;
+    color: #5e4d3d;
+    margin-top: 15px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
 }
 
 .servei-item p {
     font-size: 1.1em;
-    color: #666;
+    color: #6d5d4b;
     padding: 0 20px 20px;
+    line-height: 1.5;
 }
 
 /* Secció Sobre mi */
 
 #biografia {
+    margin-top: 4%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
-    background-color: #f9f9f9;
+    padding: 5%;
+    background-color: #ffffff;
 }
 
-#biografia .foto {
-    flex: 1;
-    max-width: 300px;
-    margin-right: 20px;
+.biografia-container {
+    display: flex;
+    max-width: 1000px;
+    gap: 40px;
+
 }
 
-#biografia .foto img {
-    width: 100%;
-    height: auto;
+.bio {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.bio h2 {
+
+    font-size: 2em;
+    font-weight: bold;
+    color: #5e4d3d;
+}
+
+.foto img {
+    max-width: 400px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#biografia .text {
-    flex: 2;
-    max-width: 600px;
-    color: #4a4a4a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
 /* Secció Politica Privacitat i cookies */
 .politica h1 {
+    margin-top: 10%;
     color: #5e4d3d;
     font-size: 2.5rem;
     text-align: center;
@@ -300,10 +348,15 @@ footer a:hover {
 
 /* Estils generals per a la secció de contacte */
 #contacte {
+    margin: 4% auto;
+    /* 4% marge superior i inferior, auto centrat horitzontalment */
     padding: 30px;
-    background-color: #f7f7f7;
+    background-color: rgba(252, 242, 231, 0.719);
     max-width: 800px;
-    margin: 0 auto;
+
+    width: 100%;
+
+
 }
 
 /* Estils per al títol del formulari */
@@ -325,6 +378,7 @@ footer a:hover {
 /* Estils per als fieldsets */
 form fieldset {
     border: 1px solid #ccc;
+    border-color: #8B4513;
     border-radius: 6px;
     padding: 15px;
     margin-bottom: 20px;
@@ -388,6 +442,42 @@ button[type="submit"] {
 .socials img {
     width: 40px;
     height: 40px;
+}
+
+/* Estils per a l'avís de cookies */
+.avis-cookies {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.avis-cookies a {
+    color: #f7d794;
+    text-decoration: underline;
+}
+
+.avis-cookies button {
+    background-color: #f7d794;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.avis-cookies button:hover {
+    background-color: #e0c17b;
 }
 
 /* MEDIA QUERIES */
