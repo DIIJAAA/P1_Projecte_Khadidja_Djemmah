@@ -156,17 +156,16 @@ footer a:hover {
     letter-spacing: 1px;
     text-align: center;
 }
-
 #videos p,
 #fotos p {
     font-size: 1.2em;
     margin-bottom: 40px;
     color: #8b7d6b;
-    text-align: center;
-    max-width: 1400px;
+    max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
+    text-align: center;
 }
 
 /* Botó per tornar a l'inici */
