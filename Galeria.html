@@ -10,6 +10,47 @@
     <title>Galeria de Fotos i Vídeos</title>
     <link rel="stylesheet" href="estils.css">
     <link rel="icon" href="Galeria/favicon.png" type="image/png">
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Galeria de Fotos i Vídeos",
+          "description": "Una galeria que mostra fotografies i vídeos professionals capturats per Dija D.",
+          "mainEntity": {
+            "@type": "ImageGallery",
+            "name": "Galeria de Fotografies",
+            "image": [
+              "https://magical-daifuku-e2838b.netlify.app/Galeria/Fotos/Foto1.jpeg",
+              "https://magical-daifuku-e2838b.netlify.app/Galeria/Fotos/Foto2.jpeg",
+              "https://magical-daifuku-e2838b.netlify.app/Galeria/Fotos/Foto3.jpeg",
+              "https://magical-daifuku-e2838b.netlify.app/Galeria/Fotos/Foto4.jpeg",
+              "https://magical-daifuku-e2838b.netlify.app/Galeria/Fotos/Foto5.jpeg"
+            ]
+          },
+          "associatedMedia": [
+            {
+              "@type": "VideoObject",
+              "name": "Vídeo 1",
+              "contentUrl": "https://magical-daifuku-e2838b.netlify.app/Galeria/Videos/video1.mp4",
+              "thumbnailUrl": "https://magical-daifuku-e2838b.netlify.app/Galeria/Thumbnails/video1-thumbnail.jpg",
+              "uploadDate": "2024-07-01T12:00:00+02:00"
+            }
+          ],
+          "author": {
+            "@type": "Person",
+            "name": "Dija D."
+          }
+        }
+        </script>
+
+    <!--
+Aquest codi és per ajudar als motors de cerca a entendre millor el contingut de la pàgina.
+L'script utilitza JSON-LD per descriure la galeria de fotos i vídeos, amb enllaços als vídeos, miniatures i la data en què es van pujar.
+Això fa que els cercadors com Google entenguin millor la informació i la mostrin de manera més clara. Aquest script s'ha obtingut de Schema.org 
+per estructurar el contingut i ha estat verificat amb Google Rich Results Test per assegurar-se que està correcte i serà reconegut per Google.
+-->
+
 </head>
 
 <body>

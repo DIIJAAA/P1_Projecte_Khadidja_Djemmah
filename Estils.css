@@ -156,6 +156,7 @@ footer a:hover {
     letter-spacing: 1px;
     text-align: center;
 }
+
 #videos p,
 #fotos p {
     font-size: 1.2em;
@@ -364,9 +365,7 @@ footer a:hover {
     padding: 30px;
     background-color: rgba(252, 242, 231, 0.719);
     max-width: 800px;
-
     width: 100%;
-
 
 }
 
@@ -491,11 +490,13 @@ button[type="submit"] {
     background-color: #e0c17b;
 }
 
-/* MEDIA QUERIES */
-@media screen and (max-width: 768px) {
-    header {
+/* Media Queries */
+
+/* Pantalles petites: mòbils */
+@media (max-width: 768px) {
+    .capçalera {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .navegacio ul {
@@ -503,44 +504,29 @@ button[type="submit"] {
         gap: 10px;
     }
 
-    .background-image {
-        height: 70vh;
+    .galeria-container {
+        grid-template-columns: 1fr;
     }
 
-    .transparent {
-        max-width: 90%;
-        padding: 15px;
-    }
-
-    .transparent h2 {
-        font-size: 1.8rem;
-    }
-
-    .transparent p {
-        font-size: 1rem;
+    #videos video {
+        height: 200px;
     }
 }
 
-@media screen and (max-width: 1024px) {
-    .transparent {
-        max-width: 85%;
-    }
-
-    .navegacio ul {
-        gap: 15px;
-    }
-
-    .transparent h2 {
-        font-size: 2rem;
-    }
-
-    .transparent p {
-        font-size: 1rem;
+/* Pantalles mitjanes: tauletes */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .galeria-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (min-width: 1025px) {
-    .transparent {
-        max-width: 60%;
+/* Pantalles grans: escriptoris */
+@media (min-width: 1025px) {
+    .galeria-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #videos video {
+        height: 300px;
     }
 }
