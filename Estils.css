@@ -491,40 +491,30 @@ button[type="submit"] {
 }
 
 /* Media Queries */
-
-/* Media Queries per a mòbils i tauletes */
+/* Mòbils i Tauletes */
 
 @media (max-width: 768px) {
     header {
         flex-direction: row;
-        /* Manté els elements en una sola fila */
         justify-content: space-between;
-        /* Separar els elements de la capçalera */
         padding: 10px 15px;
-        /* Ajustem el padding per evitar que es toquin massa els elements */
     }
 
     .navegacio ul {
         display: flex;
-        /* Mostrem els elements en una fila */
         gap: 10px;
-        /* Espai entre els botons */
         margin: 0;
-        /* Elimina l'espai per defecte */
         padding: 0;
-        /* Elimina el padding per defecte */
     }
 
     .navegacio a {
         font-size: 14px;
-        /* Reduïm la mida dels botons per a dispositius més petits */
         padding: 6px 10px;
-        /* Ajustem el padding dels enllaços per a que siguin més petits */
     }
 
     .logo img {
-        max-height: 50px;
-        /* Reduïm la mida del logo per adaptar-lo millor a la pantalla petita */
+        display: none;
+        /* Amaga el logo */
     }
 }
 
