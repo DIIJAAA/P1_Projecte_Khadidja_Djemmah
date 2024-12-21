@@ -492,12 +492,13 @@ button[type="submit"] {
 
 /* Media Queries */
 /* Mòbils i Tauletes */
-
 @media (max-width: 768px) {
     header {
         flex-direction: row;
         justify-content: space-between;
         padding: 10px 15px;
+        position: static;
+        /* Elimina l'estat fixed per a dispositius mòbils i tauletes */
     }
 
     .navegacio ul {
@@ -522,16 +523,12 @@ button[type="submit"] {
 @media (min-width: 769px) and (max-width: 1024px) {
     header {
         flex-direction: row;
-        /* Torna a col·locar els elements en línia */
         justify-content: space-between;
-        /* Manté l'espai entre logo i menú */
     }
 
     .navegacio ul {
         flex-direction: row;
-        /* Els enllaços es disposen en línia */
         gap: 20px;
-        /* Espai habitual entre els enllaços */
     }
 }
 
@@ -539,6 +536,5 @@ button[type="submit"] {
 @media (min-width: 1025px) {
     header {
         padding: 20px 40px;
-        /* Augmenta el padding per a pantalles grans */
     }
 }
