@@ -491,14 +491,13 @@ button[type="submit"] {
 }
 
 /* Media Queries */
-/* Mòbils i Tauletes */
+/* Mòbils i Tauletes (en vertical) */
 @media (max-width: 768px) {
     header {
         flex-direction: row;
         justify-content: space-between;
         padding: 10px 15px;
-        position: static;
-        /* Elimina l'estat fixed per a dispositius mòbils i tauletes */
+        position: static; /* Elimina l'estat fixed per a dispositius mòbils i tauletes */
     }
 
     .navegacio ul {
@@ -514,12 +513,11 @@ button[type="submit"] {
     }
 
     .logo img {
-        display: none;
-        /* Amaga el logo */
+        display: none; /* Amaga el logo en mòbils en orientació vertical */
     }
 }
 
-/* Tauletes en orientació horitzontal */
+/* Tauletes en orientació horitzontal i pantalles més grans */
 @media (min-width: 769px) and (max-width: 1024px) {
     header {
         flex-direction: row;
@@ -530,11 +528,19 @@ button[type="submit"] {
         flex-direction: row;
         gap: 20px;
     }
+
+    .logo img {
+        display: block; /* Mostra el logo en tauletes horitzontals */
+    }
 }
 
 /* Ordinadors de sobretaula i pantalles grans */
 @media (min-width: 1025px) {
     header {
         padding: 20px 40px;
+    }
+
+    .logo img {
+        display: block; /* El logo es mostra també en pantalles grans */
     }
 }
