@@ -492,41 +492,63 @@ button[type="submit"] {
 
 /* Media Queries */
 
-/* Pantalles petites: mòbils */
+/* Media Queries per a mòbils i tauletes */
+
 @media (max-width: 768px) {
-    .capçalera {
-        flex-direction: column;
-        align-items: flex-start;
+    header {
+        flex-direction: row;
+        /* Manté els elements en una sola fila */
+        justify-content: space-between;
+        /* Separar els elements de la capçalera */
+        padding: 10px 15px;
+        /* Ajustem el padding per evitar que es toquin massa els elements */
     }
 
     .navegacio ul {
-        flex-direction: column;
+        display: flex;
+        /* Mostrem els elements en una fila */
         gap: 10px;
+        /* Espai entre els botons */
+        margin: 0;
+        /* Elimina l'espai per defecte */
+        padding: 0;
+        /* Elimina el padding per defecte */
     }
 
-    .galeria-container {
-        grid-template-columns: 1fr;
+    .navegacio a {
+        font-size: 14px;
+        /* Reduïm la mida dels botons per a dispositius més petits */
+        padding: 6px 10px;
+        /* Ajustem el padding dels enllaços per a que siguin més petits */
     }
 
-    #videos video {
-        height: 200px;
+    .logo img {
+        max-height: 50px;
+        /* Reduïm la mida del logo per adaptar-lo millor a la pantalla petita */
     }
 }
 
-/* Pantalles mitjanes: tauletes */
+/* Tauletes en orientació horitzontal */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .galeria-container {
-        grid-template-columns: repeat(2, 1fr);
+    header {
+        flex-direction: row;
+        /* Torna a col·locar els elements en línia */
+        justify-content: space-between;
+        /* Manté l'espai entre logo i menú */
+    }
+
+    .navegacio ul {
+        flex-direction: row;
+        /* Els enllaços es disposen en línia */
+        gap: 20px;
+        /* Espai habitual entre els enllaços */
     }
 }
 
-/* Pantalles grans: escriptoris */
+/* Ordinadors de sobretaula i pantalles grans */
 @media (min-width: 1025px) {
-    .galeria-container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    #videos video {
-        height: 300px;
+    header {
+        padding: 20px 40px;
+        /* Augmenta el padding per a pantalles grans */
     }
 }
