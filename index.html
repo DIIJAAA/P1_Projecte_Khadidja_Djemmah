@@ -5,76 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Metadades per a la descripció de la pàgina. Aquest contingut apareixerà als resultats de cerca i ajuda als motors de cerca a entendre el tema de la pàgina. -->
-    <meta name="description" content="Portafoli personal de Dija D., fotògrafa especialitzada en moments únics.">
-    <!-- Paraules clau rellevants per a la pàgina. Tot i que Google ja no les utilitza activament per al rànquing, encara poden ajudar en altres cercadors i per millorar la comprensió del contingut. -->
-    <meta name="keywords" content="fotografia, retrats, paisatges, esdeveniments, Dija D.">
-    <!-- Autor de la pàgina. Aquesta metadada ajuda a identificar qui ha creat el contingut i pot ser útil per a cercadors i altres serveis. -->
+
     <meta name="author" content="Dija D.">
     <!-- Títol de la pàgina que es mostra als resultats de cerca i al navegador. És important per SEO perquè influeix en la visibilitat i clicabilitat. -->
-    <title>Portafoli de Dija D.</title>
+    <title>Projecte Programació K.Djemmah</title>
     <!-- Enllaç al full d'estils CSS per a la personalització visual de la pàgina. -->
     <link rel="stylesheet" href="Estils.css">
     <!-- Favicon que apareix a la pestanya del navegador i millora l'experiència d'usuari. També pot ajudar a l'aspecte professional de la pàgina. -->
-    <link rel="icon" href="Galeria/favicon.png" type="image/png">
+    <link rel="icon" href="Imatges/logo.png" type="image/png">
 </head>
 
 <body>
     <!-- Capçalera -->
     <header class="capçalera">
         <div class="logo">
-            <img src="Galeria/Logo.png" alt="Portfoli Fotogràfic" />
+            <img src="Imatges/logo.png" alt="Projecte Gestió BD Hotel">
         </div>
         <nav class="navegacio">
             <ul>
                 <li><a href="Index.html" class="actiu">Inici</a></li>
-                <li><a href="Galeria.html">Galeria</a></li>
-                <li><a href="Serveis.html">Serveis</a></li>
-                <li><a href="Contacte.html">Contacte</a></li>
-                <li><a href="Sobre_mi.html">Sobre mi</a></li>
+                <li><a href="DissenyBD.html">Disseny de la BD</a></li>
+                <li><a href="Manual.html">Manual</a></li>
+                <li><a href="DiagramaClasses.html">Diagrama de Classes.UML</a></li>
+                <li><a href="Incidents.html">Incidències</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Contingut Principal -->
-    <main class="Imatge-fons">
-        <div class="transparent">
-            <h2>"CAPTURANT MOMENTS, CREANT RECORDS"</h2>
-            <p>Transformant els moments més importants de la teva vida en records inoblidables.</p>
-            <a href="Galeria.html" class="btn">Veure Galeria</a>
+    <main class="menu-fons">
+        <div class="menu-text">
+            <h2>PROJECTE DE PROGRAMACIÓ</h2>
+            <p>
+                Aquesta aplicació està dissenyada per facilitar la gestió de clients, empleats, reserves i factures dins
+                d’un entorn intuïtiu i organitzat.
+                L’objectiu principal és permetre als usuaris buscar informació ràpidament, crear reserves i generar
+                factures d’una manera senzilla i eficient.
+            </p>
+            <p>
+                En aquesta pàgina web, s’explica pas a pas com utilitzar l’aplicació, des del seu inici fins a les
+                funcionalitats més importants.
+            </p>
         </div>
     </main>
 
     <!-- Peu de pàgina -->
     <footer>
-        <p>&copy; 2024 [Dija's View] Tots els drets reservats.</p>
-        <nav>
-
-            <a href="Politica_privacitat.html">Política de privacitat</a><br>
-            <a href="Politica_cookies.html">Política de Cookies</a>
-
-        </nav>
+        <p>&copy; 2025 [Projecte Programmació K.Djemmah] Tots els drets reservats.</p>
     </footer>
-    <!-- Avís de Cookies -->
-    <div id="avis-cookies" class="avis-cookies">
-        <p>
-            Aquest lloc web utilitza cookies per garantir la millor experiència a l'usuari. Pots consultar la nostra
-            <a href="Politica_cookies.html">Política de Cookies</a> per obtenir més informació.
-        </p>
-        <button id="accepta-cookies">Acceptar</button>
-    </div>
-    <script>
-        // Funció per amagar l'avís de cookies
-        document.getElementById('accepta-cookies').addEventListener('click', function () {
-            document.getElementById('avis-cookies').style.display = 'none';
-            // Guarda la preferència de l'usuari a localStorage
-            localStorage.setItem('cookiesAcceptades', 'true');
-        });
 
-        // Verifica si l'usuari ja ha acceptat les cookies
-        if (localStorage.getItem('cookiesAcceptades') === 'true') {
-            document.getElementById('avis-cookies').style.display = 'none';
-        }
-    </script>
 </body>
 
 </html>

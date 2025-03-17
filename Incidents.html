@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Incidències i solucions del projecte de gestió de base de dades.">
+    <meta name="keywords" content="incidències, errors, solucions, programació, BD, projecte hotel">
+    <meta name="author" content="K. Djemmah">
+    <title>Incidències i Solucions</title>
+    <link rel="stylesheet" href="Estils.css">
+    <link rel="icon" href="Imatges/logo.png" type="image/png">
+</head>
+
+<body>
+    <!-- Capçalera -->
+    <header class="capçalera">
+        <div class="logo">
+            <img src="Imatges/logo.png" alt="Projecte Gestió BD Hotel">
+        </div>
+        <nav class="navegacio">
+            <ul>
+                <li><a href="Index.html">Inici</a></li>
+                <li><a href="DissenyBD.html">Disseny de la BD</a></li>
+                <li><a href="Manual.html">Manual</a></li>
+                <li><a href="DiagramaClasses.html">Diagrama de Classes.UML</a></li>
+                <li><a href="Incidents.html" class="actiu">Incidències</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="seccio-incidencies">
+            <h1>Incidències i Solucions del Projecte</h1>
+            <p class="text-explicatiu" style="margin-top: 6%;">
+                A continuació, es mostren algunes de les principals incidències que m'he trobat durant el
+                desenvolupament
+                del projecte de gestió d’un hotel, juntament amb les respectives solucions aplicades. Aquest recull m'ha
+                ajudat a entendre millor la gestió d'errors i a millorar el meu procés de treball.
+            </p>
+
+            <!-- Primera Incidència -->
+            <div class="bloc-error">
+                <h2><span class="etiqueta-error">Error</span> No es connectava a la base de dades</h2>
+                <p class="text-explicatiu">
+                    Quan intentava connectar-me a la base de dades, el sistema retornava un error indicant que l'usuari
+                    no tenia permisos o que la base de dades no existia.
+                </p>
+                <h2><span class="etiqueta-solucio">Solució</span></h2>
+                <p class="text-explicatiu">
+                    Vaig revisar la configuració del servidor MySQL, creant un nou usuari amb permisos complets per a la
+                    base de dades corresponent. A més, vaig comprovar que les credencials estaven ben escrites al fitxer
+                    de configuració de connexió.
+                </p>
+            </div>
+
+            <!-- Segona Incidència -->
+            <div class="bloc-error">
+                <h2><span class="etiqueta-error">Error</span> Error de "Column not found" en inserir dades</h2>
+                <p class="text-explicatiu">
+                    Alhora de fer un INSERT a la taula de clients, apareixia l'error <em>"Unknown column 'nif'"</em>, ja
+                    que la columna real tenia un nom diferent.
+                </p>
+                <h2><span class="etiqueta-solucio">Solució</span></h2>
+                <p class="text-explicatiu">
+                    Vaig revisar l'estructura de la taula i vaig veure que la columna correcta es deia
+                    <strong>document_identitat</strong>. Un cop corregit al codi, la inserció es va realitzar
+                    correctament.
+                </p>
+            </div>
+
+            <!-- Tercera Incidència -->
+            <div class="bloc-error">
+                <h2><span class="etiqueta-error">Error</span> Problemes amb les claus foranes (Foreign Key)</h2>
+                <p class="text-explicatiu">
+                    En intentar eliminar un client relacionat amb una reserva activa, el sistema donava un error per
+                    restricció de clau forana.
+                </p>
+                <h2><span class="etiqueta-solucio">Solució</span></h2>
+                <p class="text-explicatiu">
+                    Vaig modificar la clau forana perquè acceptés l'eliminació en cascada (ON DELETE CASCADE), permetent
+                    així eliminar el client i totes les seves reserves associades de forma automàtica.
+                </p>
+            </div>
+
+            <!-- Quarta Incidència -->
+            <div class="bloc-error">
+                <h2><span class="etiqueta-error">Error</span> Problemes amb format de dates</h2>
+                <p class="text-explicatiu">
+                    Quan intentava inserir o consultar dates, rebia errors de format incorrecte, ja que el format enviat
+                    des de l'aplicació no coincidia amb el de la base de dades.
+                </p>
+                <h2><span class="etiqueta-solucio">Solució</span></h2>
+                <p class="text-explicatiu">
+                    Vaig normalitzar tots els formats de data seguint el patró <strong>YYYY-MM-DD</strong> i vaig
+                    utilitzar funcions de formatació abans d'enviar-les a la base de dades.
+                </p>
+            </div>
+
+            <!-- Cinquena Incidència -->
+            <div class="bloc-error">
+                <h2><span class="etiqueta-error">Error</span> Problemes amb NULL a camps obligatoris</h2>
+                <p class="text-explicatiu">
+                    Al fer inserts sense passar valor a alguns camps obligatoris, es generava un error per intentar
+                    introduir <strong>NULL</strong> on no estava permès.
+                </p>
+                <h2><span class="etiqueta-solucio">Solució</span></h2>
+                <p class="text-explicatiu">
+                    Vaig afegir validacions prèvies en el formulari i en el backend per assegurar-me que els camps
+                    requerits sempre tinguessin un valor vàlid abans de fer la inserció.
+                </p>
+            </div>
+            <div class="bloc-error">
+                <h2><span class="etiqueta-error">Error</span>Error "cannot find symbol" en guardar una tasca</h2>
+                <p class="text-explicatiu">
+                    Quan intentava guardar una tasca a la base de dades, el sistema retornava l'error <em>"cannot find
+                        symbol"</em>. Aquest problema es produïa per dues raons diferents:
+                </p>
+                <ul class="text-explicatiu">
+                    <li><strong>Error al nom de la columna de la base de dades</strong>: A la consulta SQL, havia escrit
+                        <code>description</code>, però a la meva taula la columna correcta es diu
+                        <code>descripcio</code>. Per aquest motiu, la base de dades no trobava la columna indicada.
+                    </li>
+                    <li><strong>Problema amb la data</strong>: Utilitzava una manera incorrecta de passar la data del
+                        <code>DatePicker</code> a la consulta SQL. El mètode que emprava per convertir la data no era
+                        compatible amb el tipus que espera la base de dades.
+                    </li>
+                </ul>
+                <h2><span class="etiqueta-solucio">Solució</span></h2>
+                <ul class="text-explicatiu">
+                    <li><strong>Corregir el nom de la columna</strong>: Vaig modificar la consulta SQL per fer servir
+                        <code>descripcio</code> en lloc de <code>description</code>, assegurant que coincidís amb el nom
+                        de la columna real de la taula.
+                    </li>
+                    <li><strong>Simplificar la conversió de la data</strong>: En comptes d'utilitzar conversions
+                        complexes, vaig utilitzar el mètode <code>setObject()</code> per passar la data directament a la
+                        consulta. Aquesta opció és compatible amb les versions modernes del controlador JDBC i evita
+                        problemes de tipus.</li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 [Projecte Programació K. Djemmah] Tots els drets reservats.</p>
+    </footer>
+</body>
+
+</html>

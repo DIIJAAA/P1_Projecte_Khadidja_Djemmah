@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Disseny de la Base de Dades de l'Hotel">
+    <meta name="keywords" content="base de dades, disseny, conceptual, lògic, físic">
+    <meta name="author" content="K. Djemmah">
+    <title>Disseny de la Base de Dades</title>
+    <link rel="stylesheet" href="estils.css">
+    <link rel="icon" href="Imatges/logo.png" type="image/png">
+</head>
+
+<body>
+    <!-- Capçalera -->
+    <header class="capçalera">
+        <div class="logo">
+            <img src="Imatges/logo.png" alt="Projecte Gestió BD Hotel">
+        </div>
+        <nav class="navegacio">
+            <ul>
+                <li><a href="Index.html">Inici</a></li>
+                <li><a href="DissenyBD.html" class="actiu">Disseny de la BD</a></li>
+                <li><a href="Manual.html">Manual</a></li>
+                <li><a href="DiagramaClasses.html">Diagrama de Classes UML</a></li>
+                <li><a href="Incidents.html">Incidències</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Secció del menú amb imatge de fons -->
+    <section class="menu-fons-bd">
+        <div class="menu-text-bd">
+            <h2>DISSENY DE LA BASE DE DADES HOTEL</h2>
+            <p>A continuació, es presenten els diferents apartats del disseny de la meva base de dades, des del disseny
+                conceptual fins a la implementació de les sentències SQL. </p>
+            <div class="boto-container">
+                <a href="#disseny-conceptual">Disseny Conceptual</a>
+                <a href="#disseny-logic">Disseny Lògic</a>
+                <a href="#disseny-fisic">Disseny Físic</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seccions del disseny -->
+    <section id="disseny-conceptual" class="seccio">
+
+        <h2>DISSENY CONCEPTUAL</h2>
+
+        <p>Aquesta secció descriu el model conceptual de la base de dades, mostrant com s'organitzen les entitats i les
+            relacions.</p>
+        <div style="text-align: center;">
+            <img src="Imatges/DissenyConceptual.png" alt="Disseny conceptual BD" style="max-width: 70%; height: auto;">
+        </div>
+
+    </section>
+
+    <section id="disseny-logic" class="seccio">
+
+        <h2>Disseny Lògic-Relacional</h2>
+        <p>Aquí es presenta el model relacional de la base de dades, incloent les taules i les seves relacions.</p>
+        <pre style="font-size: 18px; text-align: left; background-color: #f4f4f4; padding: 10px; border-radius: 5px;">
+            <strong>PERSONA</strong> (ID_persona, nom, cognom, adreça, document_identitat, data_naixement, telèfon, email)
+            
+            <strong>CLIENT</strong> (ID_client, data_registre, tipus_client, targeta_credit)
+            
+                On (ID_client) és clau forana que fa referència a la Taula PERSONA (ID_persona)
+            
+            <strong>EMPLEAT</strong> (ID_empleat, lloc_eina, data_contratacio, salari_brut, estat_laboral)
+            
+                On (ID_empleat) és clau forana que fa referència a la Taula PERSONA (ID_persona)
+            
+            <strong>TASCA</strong> (ID_tasca, descripció, data_creacio, data_ejecucio, estat_tasca)
+            
+            <strong>REALITZA</strong> (ID_tasca, ID_empleat, estat) 
+            
+                On (ID_tasca) és clau forana que fa referència a la Taula TASCA (ID_tasca)
+                On (ID_empleat) és clau forana que fa referència a la Taula EMPLEAT (ID_empleat)
+            
+            <strong>HABITACIÓ</strong> (ID_habitacio, numero_habitacio, tipus, capacitat, preu_nit_AD, preu_nit_MP, estat, descripcio)
+            
+            <strong>FACTURA</strong> (ID_factura, data_emisio, metode_pagament, base_imposable, iva, total)
+            
+            <strong>RESERVA</strong> (ID_reserva, data_reserva, data_inici, data_fi, tipus_reserva, tipus_IVA, preu_total_reserva, ID_client, ID_habitació, ID_factura)
+            
+                On (ID_client) és clau forana que fa referència a la Taula CLIENT (ID_client)
+                On (ID_habitacio) és clau forana que fa referència a la Taula HABITACIÓ (ID_habitacio)
+                On (ID_factura) és clau forana que fa referència a la Taula FACTURA (ID_factura)
+                </pre>
+
+        <h3>TAULES REPRESENTATIVES</h3>
+
+        <h4>Taula PERSONA</h4>
+        <table>
+            <tr>
+                <th>ID_persona</th>
+                <th>Nom</th>
+                <th>Cognom</th>
+                <th>Adreça</th>
+                <th>Document_identitat</th>
+                <th>Data_naixement</th>
+                <th>Telèfon</th>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Marc</td>
+                <td>López</td>
+                <td>C/ Major 10</td>
+                <td>12345678A</td>
+                <td>1985-01-15</td>
+                <td>666111222</td>
+                <td>marc.lopez@example.com</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Anna</td>
+                <td>Martínez</td>
+                <td>Av. Catalunya 5</td>
+                <td>23456789B</td>
+                <td>1990-06-25</td>
+                <td>666333444</td>
+                <td>anna.martinez@example.com</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Joan</td>
+                <td>Vila</td>
+                <td>C/ Nou 20</td>
+                <td>34567890C</td>
+                <td>1978-03-30</td>
+                <td>666555666</td>
+                <td>joan.vila@example.com</td>
+            </tr>
+        </table>
+
+        <h4>Taula CLIENT</h4>
+        <table>
+            <tr>
+                <th>ID_client</th>
+                <th>Data_registre</th>
+                <th>Tipus_client</th>
+                <th>Targeta_credit</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2023-02-15</td>
+                <td>Regular</td>
+                <td>1234-5678-9012-3456</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2024-01-10</td>
+                <td>VIP</td>
+                <td>2345-6789-0123-4567</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>2025-05-20</td>
+                <td>Regular</td>
+                <td>3456-7890-1234-5678</td>
+            </tr>
+        </table>
+
+        <h4>Taula EMPLEAT</h4>
+        <table>
+            <tr>
+                <th>ID_empleat</th>
+                <th>Lloc_feina</th>
+                <th>Data_contratacio</th>
+                <th>Salari_brut</th>
+                <th>Estat_laboral</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Recepcionista</td>
+                <td>2020-03-01</td>
+                <td>25000</td>
+                <td>Actiu</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Cuiner</td>
+                <td>2019-07-15</td>
+                <td>30000</td>
+                <td>De baixa</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Cambrer</td>
+                <td>2021-09-10</td>
+                <td>22000</td>
+                <td>Actiu</td>
+            </tr>
+        </table>
+
+        <h4>Taula TASCA</h4>
+        <table>
+            <tr>
+                <th>ID_tasca</th>
+                <th>Descripció</th>
+                <th>Data_creacio</th>
+                <th>Data_ejecucio</th>
+                <th>Estat_tasca</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Neteja habitació</td>
+                <td>2025-02-04</td>
+                <td>2025-02-05</td>
+                <td>Pendent</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Preparar esmorzar</td>
+                <td>2025-02-05</td>
+                <td>2025-02-05</td>
+                <td>Pendent</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Reparar aire condicionat</td>
+                <td>2025-02-03</td>
+                <td>2025-02-06</td>
+                <td>Completada</td>
+            </tr>
+        </table>
+        <h4>Taula REALITZA</h4>
+        <table>
+            <tr>
+                <th>ID_tasca</th>
+                <th>ID_empleat</th>
+                <th>Estat</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>3</td>
+                <td>Completada</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>En procés</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>1</td>
+                <td>Pendent</td>
+            </tr>
+        </table>
+
+        <h4>Taula HABITACIÓ</h4>
+        <table>
+            <tr>
+                <th>ID_habitacio</th>
+                <th>Numero_habitacio</th>
+                <th>Tipus</th>
+                <th>Capacitat</th>
+                <th>Preu_nit_AD</th>
+                <th>Preu_nit_MP</th>
+                <th>Estat_habitacio</th>
+                <th>Descripció</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>101</td>
+                <td>Doble</td>
+                <td>2</td>
+                <td>100</td>
+                <td>150</td>
+                <td>Disponible</td>
+                <td>Habitació amb vistes</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>102</td>
+                <td>Suite</td>
+                <td>4</td>
+                <td>200</td>
+                <td>250</td>
+                <td>Ocupada</td>
+                <td>Suite amb jacuzzi</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>103</td>
+                <td>Individual</td>
+                <td>1</td>
+                <td>80</td>
+                <td>120</td>
+                <td>Disponible</td>
+                <td>Habitació individual</td>
+            </tr>
+        </table>
+
+        <h4>Taula FACTURA</h4>
+        <table>
+            <tr>
+                <th>ID_factura</th>
+                <th>Data_emisio</th>
+                <th>Metode_pagament</th>
+                <th>Base_imposable</th>
+                <th>IVA</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2025-01-01</td>
+                <td>Targeta</td>
+                <td>150</td>
+                <td>15</td>
+                <td>165</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2025-02-05</td>
+                <td>Efectiu</td>
+                <td>200</td>
+                <td>20</td>
+                <td>220</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>2025-03-10</td>
+                <td>Transferència</td>
+                <td>100</td>
+                <td>10</td>
+                <td>110</td>
+            </tr>
+        </table>
+
+        <h4>Taula RESERVA</h4>
+        <table>
+            <tr>
+                <th>ID_reserva</th>
+                <th>Data_reserva</th>
+                <th>Data_inici</th>
+                <th>Data_fi</th>
+                <th>Tipus_reserva</th>
+                <th>Tipus_IVA</th>
+                <th>Preu_total_reserva</th>
+                <th>ID_client</th>
+                <th>ID_habitacio</th>
+                <th>ID_factura</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2025-01-10</td>
+                <td>2025-01-15</td>
+                <td>2025-01-20</td>
+                <td>Prepagament</td>
+                <td>Reduït</td>
+                <td>500</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2025-02-01</td>
+                <td>2025-02-05</td>
+                <td>2025-02-10</td>
+                <td>Normal</td>
+                <td>General</td>
+                <td>1100</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>2025-03-01</td>
+                <td>2025-03-05</td>
+                <td>2025-03-08</td>
+                <td>Prepagament</td>
+                <td>General</td>
+                <td>360</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+        </table>
+
+    </section>
+
+    <section id="disseny-fisic" class="seccio">
+
+        <h2>Disseny Físic</h2>
+        <p>En aquesta secció es mostra el codi SQL per a la implementació física de la base de dades.</p>
+        <h3>CREACIÓ DE TAULES</h3>
+        <pre style="font-size: 18px;"><code>
+            CREATE TABLE PERSONA (
+                ID_persona INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+                nom VARCHAR(20) NOT NULL,
+                cognom VARCHAR(20) NOT NULL,
+                adreca VARCHAR(50) NOT NULL,
+                document_identitat VARCHAR(20) NOT NULL UNIQUE,
+                data_naixement DATE NOT NULL,
+                telefon VARCHAR(20) NOT NULL,
+                email VARCHAR(30) NOT NULL
+            );
+            
+            CREATE TABLE CLIENT (
+                ID_client INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+                data_registre DATE NOT NULL,
+                tipus_client VARCHAR(50) NOT NULL,
+                targeta_credit VARCHAR(50) NOT NULL,
+                FOREIGN KEY (ID_client) REFERENCES PERSONA(ID_persona)
+            );
+            
+            CREATE TABLE EMPLEAT (
+                ID_empleat INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+                lloc_feina VARCHAR(50) NOT NULL,
+                data_contratacio DATE NOT NULL,
+                salari_brut DECIMAL(10, 2) NOT NULL,
+                estat_laboral VARCHAR(50) NOT NULL,
+                FOREIGN KEY (ID_empleat) REFERENCES PERSONA(ID_persona)
+            );
+            
+            CREATE TABLE TASCA (
+                ID_tasca INT PRIMARY KEY AUTO_INCREMENT,
+                descripcio VARCHAR(255) NOT NULL,
+                data_creacio DATE NOT NULL DEFAULT (CURDATE()), -- Valor per defecte, agafa la data actual
+                data_ejecucio DATE NULL,                       -- Pot ser NULL
+                estat_tasca ENUM('PENDENT', 'COMPLETADA') NOT NULL
+            );
+            
+            CREATE TABLE REALITZA (
+                ID_tasca INT NOT NULL,
+                ID_empleat INT NOT NULL,
+                estat VARCHAR(50) NOT NULL,
+                PRIMARY KEY (ID_tasca, ID_empleat),
+                FOREIGN KEY (ID_empleat) REFERENCES EMPLEAT(ID_empleat),
+                FOREIGN KEY (ID_tasca) REFERENCES TASCA(ID_tasca)
+            );
+            
+            CREATE TABLE HABITACIO (
+                ID_habitacio INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+                numero_habitacio INT NOT NULL,
+                tipus VARCHAR(50) NOT NULL,
+                capacitat INT NOT NULL,
+                preu_nit_AD DECIMAL(10, 2) NOT NULL,
+                preu_nit_MP DECIMAL(10, 2) NOT NULL,
+                estat_habitacio VARCHAR(50) NOT NULL,
+                descripcio VARCHAR(70) NOT NULL
+            );
+            
+            CREATE TABLE FACTURA (
+                ID_factura INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+                data_emisio DATE NOT NULL,
+                metode_pagament VARCHAR(50) NOT NULL,
+                base_imposable DECIMAL(10, 2) NOT NULL,
+                iva DECIMAL(10, 2) NOT NULL,
+                total DECIMAL(10, 2) NOT NULL
+            );
+            CREATE TABLE RESERVA (
+                ID_reserva INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+                data_reserva DATE NOT NULL CHECK (data_inici >= data_reserva),
+                data_inici DATE NOT NULL,
+                data_fi DATE NOT NULL CHECK (data_fi > data_inici),
+                tipus_reserva VARCHAR(2) NOT NULL,
+                tipus_IVA INT NOT NULL,
+                preu_total_reserva DECIMAL(10, 2) NOT NULL,
+                ID_client INT NOT NULL,
+                ID_habitacio INT NOT NULL,
+                ID_factura INT NOT NULL,
+                FOREIGN KEY (ID_client) REFERENCES CLIENT(ID_client),
+                FOREIGN KEY (ID_habitacio) REFERENCES HABITACIO(ID_habitacio),
+                FOREIGN KEY (ID_factura) REFERENCES FACTURA(ID_factura)
+            );
+            
+        </code></pre>
+
+        <h3>INSERCIÓ DE DADES</h3>
+        <pre style="font-size: 18px;"><code>
+            -- Taula PERSONA
+            INSERT INTO PERSONA (ID_persona, nom, cognom, adreca, document_identitat, data_naixement, telefon, email) VALUES 
+            (1, 'Marc', 'López', 'C/ Major 10', '12345678A', '1985-01-15', '666111222', 'marc.lopez@example.com'),
+            (2, 'Anna', 'Martínez', 'Av. Catalunya 5', '23456789B', '1990-06-25', '666333444', 'anna.martinez@example.com'),
+            (3, 'Joan', 'Vila', 'C/ Nou 20', '34567890C', '1978-03-30', '666555666', 'joan.vila@example.com');
+            
+            -- Taula CLIENT
+            INSERT INTO CLIENT (ID_client, data_registre, tipus_client, targeta_credit) VALUES
+            (1, '2023-02-15', 'Empleat hotel', '1234-5678-9012-3456'),
+            (2, '2024-01-10', 'VIP', '2345-6789-0123-4567'),
+            (3, '2025-05-20', 'Regular', '3456-7890-1234-5678');
+            
+            -- Taula EMPLEAT
+            INSERT INTO EMPLEAT (ID_empleat, lloc_feina, data_contratacio, salari_brut, estat_laboral) VALUES
+            (1, 'Recepcionista', '2020-03-01', 25000, 'Actiu'),
+            (2, 'Cuiner', '2019-07-15', 30000, 'De baixa'),
+            (3, 'Cambrer', '2021-09-10', 22000, 'Permis');
+            
+            -- Taula TASCA
+            INSERT INTO TASCA (ID_tasca, descripcio, data_creacio, data_ejecucio, estat_tasca) VALUES
+            (1, 'Neteja habitació', '2025-02-04', '2025-02-05', 'Pendent'),
+            (2, 'Preparar esmorzar', '2025-02-05', '2025-02-05', 'Pendent'),
+            (3, 'Reparar aire condicionat', '2025-02-03', '2025-02-06', 'Completada');
+            
+            -- Taula REALITZA
+            INSERT INTO REALITZA (ID_tasca, ID_empleat, estat) VALUES
+            (1, 3, 'Completada'),
+            (2, 2, 'En progrès'),
+            (3, 1, 'Pendent');
+            
+            -- Taula HABITACIO
+            INSERT INTO HABITACIO (ID_habitacio, numero_habitacio, tipus, capacitat, preu_nit_AD, preu_nit_MP, estat_habitacio, descripcio) VALUES
+            (1, 101, 'Doble', 2, 100, 150, 'Disponible', 'Habitació amb vistes'),
+            (2, 102, 'Suite', 4, 200, 250, 'Ocupada', 'Suite amb jacuzzi'),
+            (3, 103, 'Simple', 1, 80, 120, 'Disponible', 'Habitació individual');
+            
+            -- Taula FACTURA
+            INSERT INTO FACTURA (ID_factura, data_emisio, metode_pagament, base_imposable, IVA, total) VALUES
+            (1, '2025-01-01', 'Targeta', 150, 15, 165),
+            (2, '2025-02-05', 'Efectiu', 200, 20, 220),
+            (3, '2025-03-10', 'ApplePay', 100, 10, 110);
+            
+            -- Taula RESERVA
+            INSERT INTO RESERVA (ID_reserva, data_reserva, data_inici, data_fi, tipus_reserva, tipus_IVA, preu_total_reserva, ID_client, ID_habitacio, ID_factura) VALUES
+            (1, '2025-01-10', '2025-01-15', '2025-01-20', 'AD', 21, 500.00, 1, 1, 1),
+            (2, '2025-02-01', '2025-02-05', '2025-02-10', 'AD', 10, 1100.00, 2, 2, 2),
+            (3, '2025-03-01', '2025-03-05', '2025-03-08', 'MP', 4, 360.00, 3, 3, 3);
+
+        </code></pre>
+
+        <h3>ESQUEMA BASE DE DADES</h3>
+        <img src="Imatges/esquema_base_dades.png" alt="Esquema Base de Dades" width="1000">
+    </section>
+
+    <!-- Botó Tornar a l'Inici -->
+    <button onclick="scrollToTop()" id="btnTornaInici" title="Torna a l'inici">↑</button>
+
+    <!-- Peu de pàgina -->
+    <footer>
+        <p>&copy; 2025 [Projecte Programació K.Djemmah] Tots els drets reservats.</p>
+    </footer>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

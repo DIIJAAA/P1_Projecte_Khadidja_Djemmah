@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dija D.">
+    <title>Manual aplicació</title>
+    <link rel="stylesheet" href="Estils.css">
+    <link rel="icon" href="Imatges/logo.png" type="image/png">
+</head>
+
+<body>
+    <!-- Capçalera -->
+    <header class="capçalera">
+        <div class="logo">
+            <img src="Imatges/logo.png" alt="Projecte Gestió BD Hotel">
+        </div>
+        <nav class="navegacio">
+            <ul>
+                <li><a href="Index.html">Inici</a></li>
+                <li><a href="DissenyBD.html">Disseny de la BD</a></li>
+                <li><a href="Manual.html" class="actiu">Manual</a></li>
+                <li><a href="DiagramaClasses.html">Diagrama de Classes.UML</a></li>
+                <li><a href="Incidents.html">Incidències</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contingut principal -->
+    <main class="seccio-uml" style="margin-top: 6%;">
+        <h1>Manual Integrat d’Ús de l’Aplicació de Gestió</h1>
+
+        <p class="text-explicatiu">
+            Aquest manual està dissenyat per ajudar-te a gestionar clients, empleats, reserves, factures i tasques.
+            L’objectiu és facilitar la cerca d’informació, la creació de reserves i la generació de factures de manera
+            senzilla i eficient.
+        </p>
+
+        <h2>1. Inici de l'Aplicació i Pantalla de Benvinguda</h2>
+        <p>Aquesta pantalla inicial té com a objectiu oferir una experiència còmoda i simple per l’usuari, amb un únic
+            punt d’accés que redueix la confusió i permet una navegació fluida cap a les funcionalitats essencials del
+            sistema. Representa l’inici del flux de treball eficient i ben organitzat que proporciona l’aplicació.
+
+        </p>
+        <ol>
+            <li><strong>Missatge de benvinguda:</strong>
+                <ul>
+                    <li>Al centre de la pantalla, es mostra un missatge en text blanc que diu:</li>
+                    <li style="list-style: none; text-align: center; margin: 10px 0; font-weight: bold;">
+                        “Benvingut/da al Sistema de Gestió d’Hotel”
+                    </li>
+                    <li>Aquest missatge introdueix l’usuari al sistema.</li>
+                </ul>
+            </li>
+            <li><strong>Botó d’accés:</strong>
+                <ul>
+                    <li>Sota el missatge de benvinguda, hi ha un botó clarament visible amb el text “ACCEDEIX”.</li>
+
+                    <li>Quan es clica el botó, l'usuari és dirigit a la interfície principal, on podrà accedir als
+                        mòduls de clients, empleats, reserves, factures i tasques.</li>
+                </ul>
+            </li>
+        </ol>
+        <div class="imatge-uml">
+            <img src="Imatges/Pantalla_benvinguda.png" alt="Captura de la Pantalla de Benvinguda">
+        </div>
+
+        <h2>2. Navegació Global</h2>
+        <p>
+            En aquesta interfície, l’usuari pot accedir a les diferents funcionalitats de l’aplicació a través de la
+            barra de navegació superior. Aquesta barra conté els següents elements:
+        </p>
+        <ul>
+            <li>Clients/Empleats</li>
+            <li>Reserves</li>
+            <li>Factures</li>
+            <li>Tasques</li>
+        </ul>
+        <p>
+            En cada una de les diferents pestanyes podem gestionar diferents funcionalitats de l’aplicació, com ara la
+            creació de registres, la cerca de reserves, la generació de factures i la visualització i creació de
+            tasques.
+        </p>
+        <h2>3. Mòdul Clients/Empleats</h2>
+        <h3>3.1. Creació de Clients</h3>
+        <p>
+            Aquesta és la pantalla de gestió de clients i empleats. Aquí pots afegir, modificar o gestionar informació
+            relacionada amb les persones vinculades a la teva empresa.
+            A la part central, hi ha un formulari on pots omplir la informació de la persona, en aquest cas quedarà
+            registrada com a CLIENT. Els camps
+            inclouen: </p>
+        <ul>
+
+            <li><strong>Nom i Cognom:</strong> Per identificar la persona.</li>
+            <li><strong>NIF:</strong> Número d'identificació fiscal únic.</li>
+            <li><strong>Adreça:</strong> Direcció de contacte de la persona.</li>
+            <li><strong>Data Naixement:</strong> Escull la data amb el calendari.</li>
+            <li><strong>Telèfon i Correu:</strong> Dades de contacte ràpid.</li>
+            <li><strong>Tipus de Client:</strong> Selecciona el tipus des d’un desplegable (ex. regular, VIP).
+            </li>
+            <li><strong>Targeta Crèdit:</strong> Opció per afegir dades de pagament.</li>
+        </ul>
+        <div class="imatge-uml">
+            <img src="Imatges/Clients_subTab_Clients.png" alt="Captura de la Pantalla de Clients">
+        </div>
+
+        <h3>3.2. Creació de Empleats</h3>
+        <p>
+            En aquesta pantalla la persona quedarà registrada com a EMPLEAT. Els camps
+            inclouen: </p>
+        <ul>
+            <li><strong>Nom i Cognom:</strong> Per identificar la persona.</li>
+            <li><strong>NIF:</strong> El número fiscal únic de la persona.</li>
+            <li><strong>Adreça:</strong> On resideix la persona.</li>
+            <li><strong>Data Naixement:</strong> Escull la data amb un calendari desplegable.</li>
+            <li><strong>Telèfon i Correu:</strong> Per dades de contacte.</li>
+            <li><strong>Lloc de Feina:</strong> El rol que ocupa la persona dins de l'empresa.</li>
+            <li><strong>Data de Contractació:</strong> Quan va començar a treballar.</li>
+            <li><strong>Estat Laboral:</strong> Opcions com “Actiu” o “De baixa.”</li>
+            <li><strong>Salari Brut:</strong> Indica els ingressos anuals de l’empleat.</li>
+        </ul>
+        <div class="imatge-uml">
+            <img src="Imatges/Clients_subTab_Empleats.png" alt="Captura de la Pantalla d'Empleats">
+        </div>
+        <h3>3.3. Creació de Clients i Empleats alhora</h3>
+        <p>
+            Finalment, en aquest cas la persona quedarà
+            registrada com a CLIENT i EMPLEAT alhora. Els camps
+            inclouen:</p>
+        <ul>
+            <li><strong>Nom i Cognom:</strong> Identificació bàsica de la persona.</li>
+            <li><strong>NIF:</strong> Número d'identificació fiscal únic.</li>
+            <li><strong>Adreça:</strong> Direcció postal.</li>
+            <li><strong>Data Naixement:</strong> Camp amb calendari per seleccionar la data.</li>
+            <li><strong>Telèfon i Correu:</strong> Dades de contacte.</li>
+            <li><strong>Lloc de feina:</strong> Per especificar el rol laboral (per a empleats).</li>
+            <li><strong>Data de Contractació:</strong> Data d’inici al lloc de treball.</li>
+            <li><strong>Estat Laboral:</strong> Opcions com "Actiu" o "De baixa."</li>
+            <li><strong>Salari Brut:</strong> Quantitat que l’empleat percep.</li>
+            <li><strong>Tipus de Client:</strong> Desplegable per triar entre diferents categories de client.</li>
+            <li><strong>Targeta Crèdit:</strong> Camp opcional per afegir informació de pagament.</li>
+        </ul>
+
+        <div class="imatge-uml">
+            <img src="Imatges/Clients_subTab_EmpleatsClients.png" alt="Captura de la Pantalla de Clients i Empleats">
+        </div>
+
+        <h3>3.4. Botons d'acció</h3>
+
+        <ul>
+            <li><strong>Netejar: </strong> Elimina tot el contingut dels camps del formulari per tornar a començar.</li>
+            <li><strong>Guardar: </strong> Desa les dades introduïdes o modificades al formulari.</li>
+
+        </ul>
+
+        <h2>5. Mòdul Reserves</h2>
+        <p>La pantalla de gestió de reserves et permet crear noves reserves fàcilment o buscar-ne d'existents amb tan
+            sols un parell de clics.</p>
+        <ul>
+            <li><strong>Cercar Reserva:</strong>
+                <ul>
+                    <li><strong>Camp NIF:</strong> Permet introduir el número d'identificació fiscal (NIF) del
+                        client o
+                        empleat per buscar reserves relacionades.</li>
+                    <li><strong>Botó "Buscar Reserva":</strong> Un cop introdueixes el NIF, prem aquest botó per
+                        carregar les dades de la reserva.</li>
+                </ul>
+            </li>
+            <li><strong>Formulari per Crear Reserves:</strong>
+                <ul>
+                    <li><strong>Tipus de Reserva:</strong> Selecciona el tipus de reserva d’un menú desplegable (ex.
+                        "Prepagament", "Normal").</li>
+                    <li><strong>Data Inici i Data Fi:</strong> Tria les dates d’inici i fi de la reserva mitjançant
+                        els
+                        calendaris integrats.</li>
+                    <li><strong>Habitació:</strong> Escull entre les habitacions disponibles des d’un menú
+                        desplegable.
+                    </li>
+                    <li><strong>Mètode de Pagament:</strong> Tria com es realitzarà el pagament (targeta, efectiu,
+                        transferència, etc.).</li>
+                </ul>
+            </li>
+            <li><strong>Botó Crear Reserva: </strong>Un cop omplerts tots els camps, prem aquest botó per guardar la
+                reserva. Si hi ha errors o camps buits, l'aplicació et mostrarà un avís per corregir-los.
+            </li>
+        </ul>
+        <div class="imatge-uml"> <img src="Imatges/Reserves.png" alt="Captura de la Pantalla de Reserves"></div>
+
+
+        <h2>6. Mòdul Factures</h2>
+        <p>La pantalla de gestió de factures et permet crear noves factures fàcilment o buscar-ne d'existents amb tan
+            sols un parell de clics.</p>
+        <ul>
+            <li><strong>Cercar per NIF:</strong>
+                <ul>
+                    <li>A la part superior, trobaràs un camp anomenat <strong>"Cercar per NIF: Introduueix NIF"</strong>
+                        on pots escriure el número d'identificació fiscal del client o empleat que necessites gestionar.
+                    </li>
+                    <li>Un cop escrit, prem el botó <strong>"Cercar"</strong> per carregar tota la informació
+                        relacionada amb aquest NIF.</li>
+                </ul>
+            </li>
+            <li><strong>Informació de la Factura:</strong>
+                <ul>
+                    <li><strong>ID Factura:</strong> Identificador únic de la factura.</li>
+                    <li><strong>Data Emissió:</strong> La data en què s'ha generat la factura.</li>
+                    <li><strong>Mètode Pagament:</strong> Detalla si el pagament és amb targeta, efectiu, transferència,
+                        etc.</li>
+                    <li><strong>Base Imposable:</strong> El valor net abans d'aplicar impostos.</li>
+                    <li><strong>IVA:</strong> L'import d'impostos afegit.</li>
+                    <li><strong>Total:</strong> El cost total després d'afegir l'IVA.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="imatge-uml">
+            <img src="Imatges/Factures.png" alt="Captura de la Pantalla de Factures">
+        </div>
+
+        <h2>7. Mòdul Tasques</h2>
+        <h3>7.1. Crear Tasques</h3>
+        <p>La pantalla de tasques et permet crear noves tasques</p>
+        <ul>
+            <li><strong>Crear Tasques:</strong> Pots afegir una nova tasca al sistema. Només has d'omplir els camps
+                disponibles, com ara:
+                <ul>
+                    <li><strong>Descripció:</strong> Una breu explicació de la tasca.</li>
+                    <li><strong>Data Creació:</strong> Selecciona quan s'ha creat la tasca.</li>
+                    <li><strong>Data Ejecució:</strong> Tria la data en què es farà efectiva.</li>
+                    <li><strong>Estat:</strong> A partir d’un menú desplegable, pots definir si està pendent, en curs o
+                        completada.</li>
+                    <li><strong>Guardar:</strong> Després de completar el formulari, prem el botó
+                        <strong>"Guardar"</strong> per emmagatzemar la informació.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="imatge-uml">
+            <img src="Imatges/Crear_tasques.png" alt="Captura de la Pantalla de Crear Tasques">
+        </div>
+        <h3>7.2. Assignar Empleats</h3>
+        <p>La pantalla de tasques et permet assignar empleats a tasques específiques.</p>
+        <ul>
+            <li><strong>Selector d'ID de la tasca:</strong>
+                <ul>
+                    <li>A la part superior, tens un menú desplegable etiquetat com <strong>"Selecciona l'ID de la
+                            tasca"</strong>. Aquí pots triar la tasca que vols gestionar. Per exemple, per defecte, hi
+                        ha l'ID “1” seleccionat.</li>
+                    <li>Al costat, el botó <strong>"Buscar"</strong> et permet carregar la informació de la tasca
+                        seleccionada.</li>
+                </ul>
+            </li>
+            <li><strong>Taula d’empleats assignats:</strong>
+                <ul>
+                    <li>A sota del selector, veuràs una taula amb dues columnes principals: <strong>"NOM
+                            EMPLEAT":</strong> Mostra el nom dels empleats que no tenen cap tasca
+                        assignada. <strong>"NIF EMPLEAT":</strong> Mostra el número d’identificació de cada empleat.
+                    </li>
+
+                    <li>Quan premis el botó <strong>"Buscar"</strong>, la taula mostrarà una llista de tots els empleats
+                        que no tinguin
+                        cap tasca assignada actualment. A continuació, podràs seleccionar un o més empleats directament
+                        des de la taula i, amb el botó "Assignar", es vincularan a la tasca que hagis seleccionat
+                        prèviament.
+
+                        Aquest flux garanteix que només s'assignin empleats disponibles i facilita la gestió de
+                        responsabilitats de forma ràpida i eficient. La taula s'actualitzarà automàticament després
+                        d'assignar una tasca per reflectir l'estat actual.</li>
+                </ul>
+            </li>
+
+        </ul>
+        <div class="imatge-uml">
+            <img src="Imatges/Assignar_empleats.png" alt="Captura de la Pantalla d'Assignar Empleats">
+        </div>
+        <h3>7.3. Visualitzar i Modificar Tasques</h3>
+        <p>La pantalla de tasques et permet visualitzar les tasques existents per empleats i estat. A més a més permet
+            modificar l'estat de la tasca.</p>
+        <ul>
+            <li><strong>Taula de tasques pendents:</strong>
+                <ul>
+                    <li>Veuràs una taula amb quatre columnes principals: <strong>"ID TASCA"
+                        </strong> Mostra l'ID de la tasca. <strong>"DESCRIPCIÓ"
+                        </strong>Mostra la descripció de la tasca assignada.<strong>"ESTAT":</strong>Mostrarà l'estat de
+                        la tasca <strong>"NIF EMPLEAT":</strong> Mostra el número d’identificació de cada empleat.
+                    </li>
+                    <li>Un cop premis el botó de <strong>"Llistar"</strong>, apareixeràn totes les tasques pendents amb
+                        els empleats participants en aquestes. per tal de modificar l'estat de la tasca cal
+                        seleccionar-la a la taula i premer el botó de <strong>"Modificar"</strong></li>
+
+                    <li>Quan premis el botó <strong>"Modificar"</strong>, s'actualitzarà la llista de la taula amb
+                        l'estat modificat. Si es modifica l'estat de la tasca a COMPLET, aquesta desapareixerà de la
+                        llista ja que estarà completada.
+                        Aquest flux garanteix que només apareguin aquelles tasques pendents o en progrès.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="imatge-uml">
+            <img src="Imatges/Llistar_tasques.png" alt="Captura de la Pantalla de Llistar Tasques">
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 [Projecte Programació K.Djemmah] Tots els drets reservats.</p>
+    </footer>
+
+</body>
+
+</html>

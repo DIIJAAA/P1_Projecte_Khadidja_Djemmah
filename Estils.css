@@ -18,17 +18,8 @@ header {
     right: 0;
 }
 
-#politica_priv {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
 .logo img {
-    max-height: 70px;
+    max-height: 80px;
 }
 
 header h1 {
@@ -117,57 +108,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Disseny de la galeria */
-
-.galeria-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-.galeria-container img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.galeria-container video {
-
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.galeria-container img:hover {
-    transform: scale(1.05);
-}
-
-#videos h2,
-#fotos h2 {
-    font-size: 2em;
-    font-weight: bold;
-    color: #5e4d3d;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-#videos p,
-#fotos p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    color: #8b7d6b;
-    max-width: 1500px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-    text-align: center;
-}
+/* Disseny de BD simplificat */
 
 /* Botó per tornar a l'inici */
 #btnTornaInici {
@@ -182,7 +123,6 @@ footer a:hover {
     height: 50px;
     font-size: 24px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s;
 }
 
@@ -190,357 +130,291 @@ footer a:hover {
     background-color: #5a4d41;
 }
 
-/* Secció Serveis */
-#serveis {
-    margin-top: 4%;
-    padding: 40px 20px;
+/* Estils generals */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
     text-align: center;
-
 }
 
-#serveis h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #5e4d3d;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-#serveis p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    color: #8b7d6b;
+/* Contenidor principal amb text i botons */
+.presentacio {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 50%;
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
+    color: #31261a;
 }
 
-.serveis-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    justify-content: center;
-    padding: 0 20px;
+/* Botons d'enllaç a les seccions */
+.boto-container {
+    margin-top: 20px;
 }
 
-.servei-item {
-    background-color: #f1e3d3;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.boto-container a {
+    text-decoration: none;
+    background: #aa9789;
+    color: #3b2c1c;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-.servei-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.boto-container a:hover {
+    background: #5a4d41;
 }
 
-.servei-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-
-}
-
-.servei-item h3 {
-    font-size: 1.8em;
-    color: #5e4d3d;
-    margin-top: 15px;
-    text-transform: capitalize;
-    letter-spacing: 1px;
-}
-
-.servei-item p {
-    font-size: 1.1em;
-    color: #6d5d4b;
-    padding: 0 20px 20px;
-    line-height: 1.5;
-}
-
-/* Secció Sobre mi */
-
-#biografia {
-    margin-top: 4%;
+/* Secció del menú amb imatge de fons */
+.menu-fons {
+    margin-top: 5%;
+    background: url('Imatges/Inici.jpg') center/cover no-repeat;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5%;
-    background-color: #ffffff;
-}
-
-.biografia-container {
-    display: flex;
-    max-width: 1000px;
-    gap: 40px;
-
-}
-
-.bio {
-    font-size: 1.1em;
-    margin-bottom: 40px;
-    color: #666;
-}
-
-.bio h2 {
-
-    font-size: 2em;
-    font-weight: bold;
-    color: #5e4d3d;
-}
-
-.foto img {
-    max-width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Secció Politica Privacitat i cookies */
-.politica h1 {
-    margin-top: 10%;
-    color: #5e4d3d;
-    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #e0d7cc;
-    padding-bottom: 10px;
 }
 
-.politica h2 {
-    color: #7a5d48;
-    font-size: 1.6rem;
-    margin-top: 30px;
-    margin-bottom: 10px;
+.menu-fons-bd {
+    margin-top: 5%;
+    background: url('Imatges/bd.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.politica p,
-.politica ul {
-    color: #555;
-    font-size: 1rem;
-    margin-bottom: 20px;
+.menu-text {
+    background: rgba(46, 21, 4, 0.833);
+    padding: 20px;
+    border-radius: 15px;
+    color: #cbc0b3;
+    max-width: 600px;
 }
 
-.politica ul {
-    padding-left: 20px;
+.menu-text-bd {
+    background: rgba(91, 63, 45, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    color: #f5ebe0;
+    max-width: 600px;
 }
 
-.politica ul li {
-    margin-bottom: 10px;
-}
-
-/* Links de la politica de priv i cookies*/
-.politica a {
-    color: #9c6b4a;
-    text-decoration: underline;
-}
-
-.politica a:hover {
-    color: #5e4d3d;
-}
-
-.text {
-    padding: 30px;
-    color: #333;
-}
-
-.text h2 {
+.menu-text h2 {
     font-size: 2.5em;
-    color: #4a4a4a;
-    margin-bottom: 20px;
 }
 
-.text p {
+.menu-text p {
+    font-size: 1.2em;
+}
+
+/* Contenidors per a cada secció sense fons */
+.seccio {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    margin-bottom: 40px;
+    color: #31261a;
+}
+
+.seccio h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #8d6231;
+}
+
+.seccio p {
     font-size: 1.2em;
     line-height: 1.6;
-    margin-bottom: 20px;
+    color: #241b10;
 }
 
-/* Estils generals per a la secció de contacte */
-#contacte {
-    margin: 4% auto;
-    /* 4% marge superior i inferior, auto centrat horitzontalment */
-    padding: 30px;
-    background-color: rgba(252, 242, 231, 0.719);
-    max-width: 800px;
-    width: 100%;
-
+/* Imatges amb cantonades arrodonides */
+.seccio img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
-/* Estils per al títol del formulari */
-#contacte h2 {
-    color: #5e4d3d;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Estils per al text introductori */
-#contacte p {
-    font-size: 1.1rem;
-    color: #555;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* Estils per als fieldsets */
-form fieldset {
-    border: 1px solid #ccc;
-    border-color: #8B4513;
-    border-radius: 6px;
+/* Bloc de codi */
+.seccio pre {
+    background-color: #f4f4f4;
     padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+/* Taules */
+.seccio table {
+    width: 70%;
+    border-collapse: collapse;
+    text-align: center;
     margin-bottom: 20px;
+    margin-left: 15%;
 }
 
-form legend {
-    color: #7a5d48;
-    font-size: 1.5rem;
+.seccio th,
+.seccio td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+.seccio th {
+    background-color: #8c705c;
+    color: #f5ebe0;
     font-weight: bold;
-    padding-left: 10px;
 }
 
-/* Estils per als grups de formulari */
-.form-group {
+/* Secció Diagrama UML */
+.seccio-uml {
+    margin: 120px auto 40px;
+    /* Per deixar espai respecte al header fix */
+    padding: 30px 20px;
+    max-width: 1000px;
+    /* Fons clar, suau */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #3b2c1c;
+
+    text-align: justify;
+    /* Afegeix això per justificar */
+    line-height: 1.8;
+}
+
+.seccio-uml h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #8d6231;
+}
+
+.seccio-uml p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.seccio-uml ul ul {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.seccio-uml .imatge-uml {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.seccio-uml .imatge-uml img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+/* Estil per a h2 */
+.seccio-uml h2 {
+    color: #8B5E3C;
+    /* Marró suau */
+    font-size: 24px;
+    /* Més gran que el paràgraf */
+    margin-top: 30px;
     margin-bottom: 15px;
 }
 
-.form-group label {
-    font-size: 1rem;
-    color: #5e4d3d;
-    margin-bottom: 5px;
-    display: block;
+/* Estil per a h3 */
+.seccio-uml h3 {
+    color: #A06A42;
+    /* Una mica diferent per distingir */
+    font-size: 20px;
+    /* Ligerament més petit que h2 */
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Títol secció */
+.seccio-incidencies h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Text explicatiu */
+.text-explicatiu {
+    padding: 20px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Bloc error/solució */
+.bloc-error {
     background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
 }
 
-/* Estils per al botó d'enviament */
-button[type="submit"] {
-    background-color: #8B4513;
-    color: white;
-    padding: 8px 15px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    width: auto;
-    display: block;
-    margin: 20px auto 0;
-}
-
-/* Estils per a la llista de xarxes socials */
-.socials {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.socials li {
-    margin: 0 10px;
-}
-
-.socials img {
-    width: 40px;
-    height: 40px;
-}
-
-/* Estils per a l'avís de cookies */
-.avis-cookies {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-    z-index: 1000;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.avis-cookies a {
-    color: #f7d794;
-    text-decoration: underline;
-}
-
-.avis-cookies button {
-    background-color: #f7d794;
-    color: #333;
-    border: none;
-    padding: 8px 15px;
-    font-size: 0.9rem;
+/* Etiquetes error i solució */
+.etiqueta-error,
+.etiqueta-solucio {
+    padding: 5px 15px;
     border-radius: 5px;
-    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
 }
 
-.avis-cookies button:hover {
-    background-color: #e0c17b;
+.etiqueta-error {
+    background-color: #b83232;
+    margin-right: 10px;
 }
 
-/* Media Queries */
-/* Mòbils i Tauletes (en vertical) */
-@media (max-width: 768px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px 15px;
-        position: static; /* Elimina l'estat fixed per a dispositius mòbils i tauletes */
-    }
-
-    .navegacio ul {
-        display: flex;
-        gap: 10px;
-        margin: 0;
-        padding: 0;
-    }
-
-    .navegacio a {
-        font-size: 14px;
-        padding: 6px 10px;
-    }
-
-    .logo img {
-        display: none; /* Amaga el logo en mòbils en orientació vertical */
-    }
+.etiqueta-solucio {
+    background-color: #2e8b57;
+    margin-right: 10px;
 }
 
-/* Tauletes en orientació horitzontal i pantalles més grans */
-@media (min-width: 769px) and (max-width: 1024px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .navegacio ul {
-        flex-direction: row;
-        gap: 20px;
-    }
-
-    .logo img {
-        display: block; /* Mostra el logo en tauletes horitzontals */
-    }
+/* Títols dins blocs */
+.bloc-error h2 {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
 }
 
-/* Ordinadors de sobretaula i pantalles grans */
-@media (min-width: 1025px) {
-    header {
-        padding: 20px 40px;
-    }
+.etiqueta-error {
+    color: #fff;
+    background: #ff5c5c;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
 
-    .logo img {
-        display: block; /* El logo es mostra també en pantalles grans */
-    }
+.etiqueta-solucio {
+    color: #fff;
+    background: #4CAF50;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.bloc-error ul {
+    list-style-type: circle;
+    margin-left: 20px;
 }
